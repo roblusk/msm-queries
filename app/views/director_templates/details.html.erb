@@ -24,4 +24,32 @@
 
   <dt>Updated at</dt>
   <dd><%= @the_director.updated_at %></dd>
-  </dl>
+</dl>
+
+<hr>
+
+<h2>Filmography</h2>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Image</th>
+    <th>Title</th>
+    <th>Year</th>
+    <th>Director</th>
+    <th></th>
+  </tr>
+
+
+
+  <% @movies.each do |a_movie| %>
+    <tr>
+      <th><%= a_movie.id%></th>
+      <th><img src="<%= a_movie.image%>"></th>
+      <th><%= a_movie.title %></th>
+      <th><%= a_movie.year%></th>
+      <th><%= @the_director.name %></th>
+      <th><a href="/<%= a_movie.id%>">Show details</a></th>
+    </tr>
+  <% end %>
+</table>
